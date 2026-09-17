@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Microsoft Learn | Do Zero à Cloud — @paulofreitas.py</title>
+<meta name="description" content="Hub de links para trilhas, certificações e Applied Skills do Microsoft Learn.">
+<style>
+:root{
+  --bg:#07090b;--panel:#0d1216;--line:#1a252c;--text:#f4f7f8;--muted:#9aa7ad;
+  --green:#b7ff19;--cyan:#18dfff;--purple:#9a67ff;--yellow:#ffd23f;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 80% 5%,#10231d 0,#07090b 34%),var(--bg);
+color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.5}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;
+background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+background-size:42px 42px;mask-image:linear-gradient(to bottom,#000,transparent 90%)}
+.wrap{width:min(1180px,92%);margin:auto}
+header{padding:28px 0 18px;border-bottom:1px solid var(--line)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.02em}
+.mslogo{display:grid;grid-template-columns:1fr 1fr;gap:3px;width:30px;height:30px}
+.mslogo i:nth-child(1){background:#f25022}.mslogo i:nth-child(2){background:#7fba00}.mslogo i:nth-child(3){background:#00a4ef}.mslogo i:nth-child(4){background:#ffb900}
+nav{display:flex;gap:8px;flex-wrap:wrap}
+nav a,.chip{color:var(--muted);text-decoration:none;padding:8px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px}
+nav a:hover{color:var(--text);border-color:var(--cyan)}
+.hero{padding:64px 0 42px;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}
+.kicker{color:var(--cyan);font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:800}
+h1{font-size:clamp(42px,7vw,82px);line-height:.93;margin:14px 0 20px;letter-spacing:-.05em}
+h1 span{color:var(--green)}
+.lead{font-size:19px;color:#c4ced2;max-width:720px}
+.hero-card{border:1px solid #274047;background:linear-gradient(145deg,#0c1719,#0b0d11);padding:28px;border-radius:24px;box-shadow:0 0 50px #00e5ff12}
+.hero-card .terminal{font-family:ui-monospace,monospace;color:var(--green);font-size:14px}
+.hero-card p{color:var(--muted)}
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0 34px}
+input{flex:1;min-width:240px;background:#0b1014;border:1px solid #243139;color:white;border-radius:12px;padding:14px 16px;outline:none}
+input:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #18dfff18}
+.filters button{background:#0b1014;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:11px 14px;cursor:pointer}
+.filters button.active,.filters button:hover{color:#061006;background:var(--green);border-color:var(--green)}
+section{padding:26px 0 18px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:18px}
+h2{font-size:30px;margin:0;letter-spacing:-.03em}.section-head p{color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{position:relative;background:linear-gradient(145deg,#0d1317,#0a0d10);border:1px solid var(--line);border-radius:18px;padding:20px;min-height:215px;transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:#35515a;box-shadow:0 12px 40px #0008}
+.card:before{content:"";position:absolute;left:0;top:20px;bottom:20px;width:3px;background:var(--accent);border-radius:5px}
+.badge{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:9px;font-weight:800}
+.card h3{margin:0 0 7px;font-size:20px}.card p{color:var(--muted);font-size:14px;margin:0 0 18px}
+.links{display:flex;gap:8px;flex-wrap:wrap}.links a{font-size:12px;color:var(--text);text-decoration:none;border:1px solid #29363d;border-radius:9px;padding:8px 10px}.links a:hover{border-color:var(--accent);color:var(--accent)}
+.level{margin-top:28px}.level-title{display:flex;align-items:center;gap:12px;margin-bottom:15px}.dot{width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px var(--accent)}
+footer{border-top:1px solid var(--line);margin-top:50px;padding:32px 0 45px;color:var(--muted);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer strong{color:white} .empty{display:none;padding:30px;text-align:center;color:var(--muted)}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.hero{padding-top:40px}.top{align-items:flex-start;flex-direction:column}nav{width:100%}h1{font-size:52px}}
+</style>
+</head>
+<body>
+<header><div class="wrap top">
+  <div class="brand"><span class="mslogo"><i></i><i></i><i></i><i></i></span> Microsoft Learn Hub</div>
+  <nav><a href="#iniciante">Iniciante</a><a href="#intermediario">Intermediário</a><a href="#avancado">Avançado</a><a href="#certificacoes">Certificações</a></nav>
+</div></header>
+
+<main class="wrap">
+<section class="hero">
+  <div>
+    <div class="kicker">Microsoft Learn · Do Zero à Cloud</div>
+    <h1>Aprenda.<br><span>Pratique.</span><br>Construa.</h1>
+    <p class="lead">Um hub independente de curadoria para encontrar rapidamente trilhas, certificações, avaliações práticas e credenciais do Microsoft Learn.</p>
+    <div class="toolbar">
+      <input id="search" placeholder="Buscar Azure, IA, dados, certificação..." aria-label="Buscar">
+      <div class="filters" id="filters">
+        <button class="active" data-filter="all">Todos</button>
+        <button data-filter="iniciante">Iniciante</button>
+        <button data-filter="intermediario">Intermediário</button>
+        <button data-filter="avancado">Avançado</button>
+        <button data-filter="certificacao">Certificações</button>
+      </div>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="terminal">~/paulofreitas.py/microsoft-learn</div>
+    <p>Conteúdo oficial, links diretos e caminhos organizados por objetivo. O site não substitui o Microsoft Learn: ele funciona como um ponto de entrada.</p>
+    <div class="chip">Microsoft Student Ambassador</div>
+    <div class="chip">@paulofreitas.py</div>
+  </div>
+</section>
+
+<div id="content"></div>
+<div class="empty" id="empty">Nenhum recurso encontrado.</div>
+</main>
+
+<footer class="wrap">
+  <div><strong>@paulofreitas.py</strong><br>Microsoft Student Ambassador</div>
+  <div>Links direcionam para recursos oficiais da Microsoft.</div>
+</footer>
+
+<script>
+const resources = [
+{level:'iniciante',accent:'--green',title:'Microsoft Learn',tag:'Plataforma',desc:'Módulos, roteiros, cursos e recursos para aprender no próprio ritmo.',learn:'https://learn.microsoft.com/pt-br/training/'},
+{level:'iniciante',accent:'--green',title:'Azure Fundamentals · AZ-900',tag:'Fundamentos',desc:'Conceitos de nuvem, arquitetura e serviços do Azure, gerenciamento e governança.',learn:'https://learn.microsoft.com/pt-br/credentials/certifications/resources/study-guides/az-900'},
+{level:'iniciante',accent:'--green',title:'Azure Data Fundamentals · DP-900',tag:'Dados',desc:'Conceitos de dados, workloads relacionais e não relacionais e serviços de dados no Azure.',learn:'https://learn.microsoft.com/pt-br/training/paths/azure-data-fundamentals-explore-core-data-concepts/',cert:'https://learn.microsoft.com/pt-br/credentials/certifications/azure-data-fundamentals/'},
+{level:'iniciante',accent:'--green',title:'Security, Compliance & Identity · SC-900',tag:'Segurança',desc:'Fundamentos de segurança, conformidade, identidade, Entra e soluções Microsoft.',learn:'https://learn.microsoft.com/pt-br/credentials/certifications/resources/study-guides/sc-900',cert:'https://learn.microsoft.com/pt-br/credentials/certifications/security-compliance-and-identity-fundamentals/'},
+{level:'iniciante',accent:'--green',title:'Power Platform · PL-900',tag:'Low-code',desc:'Power Apps, Power Automate, Dataverse, Power Pages e Copilot Studio.',learn:'https://learn.microsoft.com/pt-br/training/paths/pl-900-power-platform-fundamentals/',cert:'https://learn.microsoft.com/pt-br/credentials/certifications/power-platform-fundamentals/'},
+{level:'iniciante',accent:'--green',title:'Comece a usar o Microsoft Fabric',tag:'Dados · Fabric',desc:'Integração, transformação, armazenamento, análise e ciência de dados em uma plataforma.',learn:'https://learn.microsoft.com/pt-br/training/paths/get-started-fabric/'},
+{level:'iniciante',accent:'--green',title:'Conceitos de IA',tag:'IA',desc:'Conceitos de IA, IA generativa, agentes, visão computacional, fala, NLP e RAG.',learn:'https://learn.microsoft.com/pt-br/training/paths/ai-concepts/'},
+
+{level:'intermediario',accent:'--cyan',title:'Azure Administrator · AZ-104',tag:'Azure',desc:'Administração de identidade, governança, armazenamento, computação, redes e monitoramento.',learn:'https://learn.microsoft.com/pt-br/credentials/certifications/resources/study-guides/az-104',cert:'https://learn.microsoft.com/pt-br/credentials/certifications/azure-administrator/'},
+{level:'intermediario',accent:'--cyan',title:'Power BI Data Analyst · PL-300',tag:'Dados · BI',desc:'Preparação, modelagem, visualização, análise e proteção de dados no Power BI.',learn:'https://learn.microsoft.com/pt-br/credentials/certifications/resources/study-guides/pl-300',cert:'https://learn.microsoft.com/pt-br/credentials/certifications/data-analyst-associate/'},
+{level:'intermediario',accent:'--cyan',title:'Azure AI Apps & Agents · AI-103',tag:'IA · Agentes',desc:'Desenvolvimento de aplicações e agentes de IA com Python e Microsoft Foundry.',learn:'https://learn.microsoft.com/pt-br/credentials/certifications/resources/study-guides/ai-103',cert:'https://learn.microsoft.com/pt-br/credentials/certifications/azure-ai-apps-and-agents-developer-associate/'},
+{level:'intermediario',accent:'--cyan',title:'Desenvolver agentes de IA no Azure',tag:'IA · Agents',desc:'Microsoft Foundry Agent Service, Agent Framework, ferramentas, RAG, workflows e multiagentes.',learn:'https://learn.microsoft.com/pt-br/training/paths/develop-ai-agents-azure/'},
+{level:'intermediario',accent:'--cyan',title:'GenAIOps',tag:'IA · Produção',desc:'Operacionalização de IA generativa: prompts, avaliação, GitHub Actions, monitoramento, custos e tracing.',learn:'https://learn.microsoft.com/pt-br/training/paths/operationalize-gen-ai-apps/'},
+{level:'intermediario',accent:'--cyan',title:'AI-300 · MLOps e GenAIOps',tag:'MLOps',desc:'Curso oficial para projetar, implementar e operar soluções de MLOps e GenAIOps no Azure.',learn:'https://learn.microsoft.com/pt-br/training/courses/ai-300t00'},
+
+{level:'avancado',accent:'--purple',title:'Azure Solutions Architect · AZ-305',tag:'Arquitetura',desc:'Identidade, governança, monitoramento, armazenamento, continuidade e infraestrutura.',learn:'https://learn.microsoft.com/pt-br/credentials/certifications/resources/study-guides/az-305',cert:'https://learn.microsoft.com/pt-br/credentials/certifications/azure-solutions-architect/'},
+{level:'avancado',accent:'--purple',title:'Multi-Agent Systems',tag:'Agentes · Arquitetura',desc:'Orquestração e colaboração entre múltiplos agentes com o Microsoft Agent Framework.',learn:'https://learn.microsoft.com/pt-br/training/paths/develop-ai-agents-azure/'},
+{level:'avancado',accent:'--purple',title:'Enterprise Agentic AI',tag:'IA · Governança',desc:'CI/CD, Zero Trust, IA responsável, governança e operação de sistemas multiagente em escala.',learn:'https://learn.microsoft.com/pt-br/training/paths/aaai-3-deploy-govern-agentic-ai-solutions-azure/'},
+
+{level:'certificacao',accent:'--yellow',title:'Avaliações práticas',tag:'Certificações',desc:'Pratique com perguntas para avaliar preparação, identificar lacunas e revisar tópicos.',learn:'https://learn.microsoft.com/pt-br/credentials/certifications/practice-assessments-for-microsoft-certifications'},
+{level:'certificacao',accent:'--yellow',title:'Microsoft Applied Skills',tag:'Credencial',desc:'Demonstre habilidades em cenários reais por meio de avaliações interativas baseadas em laboratório.',learn:'https://learn.microsoft.com/pt-br/credentials/applied-skills/'},
+{level:'certificacao',accent:'--yellow',title:'Caminhos de carreira',tag:'Carreira',desc:'Explore carreiras, treinamentos, credenciais e planos de aprendizagem no Microsoft Learn.',learn:'https://learn.microsoft.com/pt-br/training/career-paths/'}
+];
+
+const names={iniciante:'NÍVEL 01 · INICIANTE',intermediario:'NÍVEL 02 · INTERMEDIÁRIO',avancado:'NÍVEL 03 · AVANÇADO',certificacao:'CERTIFICAÇÕES & CREDENCIAIS'};
+let filter='all';
+function render(){
+ const q=document.getElementById('search').value.toLowerCase().trim();
+ const groups=['iniciante','intermediario','avancado','certificacao'];
+ let total=0, html='';
+ groups.forEach(g=>{
+  const items=resources.filter(r=>(filter==='all'||r.level===filter)&&r.level===g&&(`${r.title} ${r.tag} ${r.desc}`).toLowerCase().includes(q));
+  if(!items.length)return;
+  total+=items.length;
+  html+=`<section id="${g}" class="level"><div class="section-head"><div class="level-title" style="--accent:var(${items[0].accent})"><span class="dot"></span><h2>${names[g]}</h2></div><p>${items.length} recursos</p></div><div class="grid">`;
+  items.forEach(r=>{
+   html+=`<article class="card" style="--accent:var(${r.accent})"><div class="badge">${r.tag}</div><h3>${r.title}</h3><p>${r.desc}</p><div class="links"><a href="${r.learn}" target="_blank" rel="noopener">Abrir no Learn ↗</a>${r.cert?`<a href="${r.cert}" target="_blank" rel="noopener">Certificação ↗</a>`:''}</div></article>`;
+  });
+  html+='</div></section>';
+ });
+ document.getElementById('content').innerHTML=html;
+ document.getElementById('empty').style.display=total?'none':'block';
+}
+document.getElementById('search').addEventListener('input',render);
+document.querySelectorAll('#filters button').forEach(b=>b.addEventListener('click',()=>{
+ document.querySelectorAll('#filters button').forEach(x=>x.classList.remove('active'));b.classList.add('active');filter=b.dataset.filter;render();
+}));
+render();
+</script>
+</body>
+</html>
